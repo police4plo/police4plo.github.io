@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="贩夫皂隶 - 深度解读古代底层社会与衙门差役的历史文化网站。提供古代市井生活、差役制度、民俗风情及历史小说资源推荐。">
+    <meta name="keywords" content="贩夫皂隶,古代差役,市井文化,衙门生活,历史小说,古代社会">
+    <title>贩夫皂隶-古代市井与衙门差役的历史文化指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #8B4513;
+            --secondary-color: #D2691E;
+            --bg-color: #FDFBF7;
+            --text-color: #333;
+            --text-light: #666;
+            --border-color: #E0D8C8;
+            --white: #ffffff;
+            --shadow: 0 4px 12px rgba(139, 69, 19, 0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "SimSun", serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-weight: normal;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-color);
+        }
+
+        nav a.active, nav a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #FDFBF7 0%, #EDE0D4 100%);
+            padding: 80px 20px;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-family: "Kaiti", "STKaiti", serif;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(139, 69, 19, 0.1);
+            color: var(--primary-color);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        /* Content Section */
+        .content-section h2 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .intro-text {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            text-align: justify;
+        }
+
+        /* Grid Cards */
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 180px;
+            background-color: #ddd;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: var(--text-color);
+        }
+
+        .card-desc {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: 15px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-meta {
+            font-size: 0.85rem;
+            color: var(--secondary-color);
+            border-top: 1px solid #f0f0f0;
+            padding-top: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Sidebar */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .sidebar-widget {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .widget-title {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            padding-left: 10px;
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .rank-list {
+            list-style: none;
+        }
+
+        .rank-item {
+            display: flex;
+            align-items: baseline;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        .rank-num {
+            width: 24px;
+            height: 24px;
+            background: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            line-height: 24px;
+            border-radius: 50%;
+            font-size: 0.8rem;
+            margin-right: 10px;
+            flex-shrink: 0;
+        }
+
+        .rank-item:nth-child(1) .rank-num { background: #D4AF37; }
+        .rank-item:nth-child(2) .rank-num { background: #C0C0C0; }
+        .rank-item:nth-child(3) .rank-num { background: #CD7F32; }
+
+        .rank-title {
+            font-size: 0.95rem;
+            color: var(--text-color);
+        }
+
+        /* History Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 20px;
+            border-left: 2px solid var(--border-color);
+        }
+
+        .timeline-item {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -26px;
+            top: 5px;
+            width: 10px;
+            height: 10px;
+            background: var(--white);
+            border: 2px solid var(--secondary-color);
+            border-radius: 50%;
+        }
+
+        .timeline-year {
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+            margin-bottom: 5px;
+        }
+
+        .timeline-content {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #3E2723;
+            color: #D7CCC8;
+            padding: 50px 20px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a:hover {
+            color: var(--secondary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .header-inner {
+                flex-direction: column;
+                gap: 15px;
+            }
+            nav ul {
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo">
+                贩夫皂隶
+                <span>· 古代市井与差役文化</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">市井百态</a></li>
+                    <li><a href="#">衙门差役</a></li>
+                    <li><a href="#">历史小说</a></li>
+                    <li><a href="#">民俗考据</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>贩夫皂隶</h1>
+        <p>走进历史的底层，还原古代市井生活的真实面貌。从街头商贩到衙门差役，探寻那些被正史忽略的社会肌理。</p>
+        <div class="hero-tags">
+            <span class="tag">#古代社会</span>
+            <span class="tag">#差役制度</span>
+            <span class="tag">#市井文化</span>
+            <span class="tag">#历史小说</span>
+        </div>
+    </section>
+
+    <main class="container">
+        <!-- Main Content Area -->
+        <div class="content-section">
+            <h2>历史背景与制度解析</h2>
+            <div class="intro-text">
+                <p><strong>“贩夫皂隶”</strong>一词，常泛指古代社会中从事商业贸易的商贩以及官府衙门中负责杂役的差人。在传统史学观念中，这一群体往往被置于统治阶层的边缘，甚至带有贬义色彩。然而，正是这些处于社会底层的“小人物”，构成了古代社会运转的毛细血管，维系着城市的物资流通与治安秩序。</p>
+            </div>
+
+            <h3>衙门差役的日常</h3>
+            <div class="grid-cards">
+                <article class="card">
+                    <img src="https://picsum.photos/seed/yamen/400/250" alt="衙门差役" class="card-img">
+                    <div class="card-body">
+                        <h4 class="card-title">衙门里的“三班六房”</h4>
+                        <p class="card-desc">详细解读清代衙门中负责缉捕、刑狱和壮班的差役体系，揭秘他们如何协助县令处理日常政务。</p>
+                        <div class="card-meta">
+                            <span>制度考据</span>
+                            <span>2023-10-24</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img src="https://picsum.photos/seed/court/400/250" alt="公堂审案" class="card-img">
+                    <div class="card-body">
+                        <h4 class="card-title">衙门公堂与“坐堂”规矩</h4>
+                        <p class="card-desc">差役在审案过程中的角色：从跪堂、传唤到押解，以及他们在公堂上不可逾越的等级与禁忌。</p>
+                        <div class="card-meta">
+                            <span>职场规则</span>
+                            <span>2023-10-20</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img src="https://picsum.photos/seed/courtroom/400/250" alt="县令与差役" class="card-img">
+                    <div class="card-body">
+                        <h4 class="card-title">捕头与仵作：生死线上的协作</h4>
+                        <p class="card-desc">捕头负责追捕逃犯，仵负责验尸，两者在古代司法体系中的专业分工与复杂关系。</p>
+                        <div class="card-meta">
+                            <span>职业分工</span>
+                            <span>2023-10-15</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img src="https://picsum.photos/seed/night/400/250" alt="夜巡" class="card-img">
+                    <div class="card-body">
+                        <h4 class="card-title">夜巡与更夫：古代的治安网络</h4>
+                        <p class="card-desc">除了官差，更夫、巡街的兵丁如何共同编织起古代城市的夜间治安网，以及相关的民俗传说。</p>
+                        <div class="card-meta">
+                            <span>民俗风情</span>
+                            <span>2023-10-10</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <h3>市井商贩的众生相</h3>
+            <div class="intro-text" style="margin-top: 20px;">
+                <p>城市的繁荣离不开“贩夫”。从早市的小贩到远行的商旅，他们背负着货物穿街走巷。这一群体不仅涉及经济活动，更承载着丰富的地域文化与饮食传承。</p>
+            </div>
+            
+            <div class="grid-cards">
+                <article class="card">
+                    <img src="https://picsum.photos/seed/merchant/400/250" alt="古代商人" class="card-img">
+                    <div class="card-body">
+                        <h4 class="card-title">行会与商会：古代商人的组织</h4>
+                        <p class="card-desc">古代商业是如何组织的？牙行、会馆如何帮助商贩解决信息不对称与利益分配问题。</p>
+                        <div class="card-meta">
+                            <span>商业史</span>
+                            <span>2023-10-05</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img src="https://picsum.photos/seed/market/400/250" alt="集市" class="card-img">
+                    <div class="card-body">
+                        <h4 class="card-title">庙会与集市：古代的狂欢节</h4>
+                        <p class="card-desc">分析古代庙会中商贩云集的现象，以及集市交易背后的社会心理与娱乐功能。</p>
+                        <div class="card-meta">
+                            <span>社会生活</span>
+                            <span>2023-09-28</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+        <!-- Sidebar Area -->
+        <aside>
+            <div class="sidebar-widget">
+                <h4 class="widget-title">热门推荐</h4>
+                <ul class="rank-list">
+                    <li class="rank-item">
+                        <span class="rank-num">1</span>
+                        <a href="#" class="rank-title">古代差役的工资与福利（含“火耗”）</a>
+                    </li>
+                    <li class="rank-item">
+                        <span class="rank-num">2</span>
+                        <a href="#" class="rank-title">市井俗语中的“贩夫皂隶”指代什么？</a>
+                    </li>
+                    <li class="rank-item">
+                        <span class="rank-num">3</span>
+                        <a href="#" class="rank-title">古代卖油郎与走街串巷的小贩</a>
+                    </li>
+                    <li class="rank-item">
+                        <span class="rank-num">4</span>
+                        <a href="#" class="rank-title">衙门里的“三班”：捕快、快班与壮班</a>
+                    </li>
+                    <li class="rank-item">
+                        <span class="rank-num">5</span>
+                        <a href="#" class="rank-title">古代刑具与差役的执行手段</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sidebar-widget">
+                <h4 class="widget-title">历史演变</h4>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-year">先秦时期</div>
+                        <div class="timeline-content">“皂隶”一词初现，主要指从事杂务的仆役。</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">秦汉时期</div>
+                        <div class="timeline-content">建立“三老”、“里正”等基层管理组织，商贾地位开始分化。</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">唐代</div>
+                        <div class="timeline-content">坊市制度严格限制商贩活动，夜市初现端倪。</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">宋代</div>
+                        <div class="timeline-content">商业极度繁荣，差役制度规范化，“三班六房”体系成熟。</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">清代</div>
+                        <div class="timeline-content">通俗文学中“贩夫皂隶”形象定型，反映市民文化兴起。</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-widget">
+                <h4 class="widget-title">相关历史小说</h4>
+                <ul class="rank-list">
+                    <li class="rank-item">
+                        <span class="rank-num" style="background:#888;"></span>
+                        <a href="#" class="rank-title">《锦衣之下》：古代捕快的爱情</a>
+                    </li>
+                    <li class="rank-item">
+                        <span class="rank-num" style="background:#888;"></span>
+                        <a href="#" class="rank-title">《长安十二时辰》：长安城的巡街与破案</a>
+                    </li>
+                    <li class="rank-item">
+                        <span class="rank-num" style="background:#888;"></span>
+                        <a href="#" class="rank-title">《清平乐》：市井百态与士大夫生活</a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>关于本站</h3>
+                <p style="font-size: 0.9rem; line-height: 1.6; color: #A1887F;">
+                    本站致力于还原古代市井生活与衙门差役的真实面貌，为历史爱好者提供详实的考据资料与丰富的阅读体验。
+                </p>
+            </div>
+            <div class="footer-col">
+                <h3>栏目导航</h3>
+                <ul>
+                    <li><a href="#">市井百态</a></li>
+                    <li><a href="#">衙门差役</a></li>
+                    <li><a href="#">历史小说</a></li>
+                    <li><a href="#">民俗考据</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>法律声明</h3>
+                <ul>
+                    <li><a href="#">版权信息</a></li>
+                    <li><a href="#">隐私政策</a></li>
+                    <li><a href="#">免责声明</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2023 贩夫皂隶历史文化网 版权所有
+        </div>
+    </footer>
+
+</body>
+</html>
